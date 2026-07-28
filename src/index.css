@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+@theme {
+  --color-laranja: #ff5a1f;
+  --color-vermelho: #e1002a;
+  --color-amarelo: #ffc700;
+  --color-rosa: #ff2e93;
+  --color-tinta: #1c1710;
+  --color-fundo: #fff3dd;
+
+  --font-display: 'Anton', sans-serif;
+  --font-body: 'Archivo Narrow Variable', sans-serif;
+}
+
+/* selo torto tipo etiqueta colada às pressas — o elemento-assinatura do site */
+@utility hard-shadow {
+  box-shadow: 4px 4px 0 0 var(--color-tinta);
+}
+
+body {
+  background-color: var(--color-fundo);
+  color: var(--color-tinta);
+  font-family: var(--font-body);
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  letter-spacing: 0.01em;
+}
