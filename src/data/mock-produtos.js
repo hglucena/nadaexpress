@@ -630,6 +630,307 @@ export const produtosMock = [
     descricao: 'Pedala sem sair de casa, dobrável mas ainda ocupa espaço no quarto igual.',
     specs: { resistencia: 'Magnética', niveis: '8', dobravel: 'Sim' },
   },
+  // ─── 49-108: catálogo expandido ───
+  {
+    id: 49, titulo: 'Cabo Usb C Carregamento Rápido 2 Metros Blindado Reforçado Para Celular Tablet Power Bank Presente Original',
+    preco: 11.96, precoOriginal: 39.9, desconto: 70, vendidos: 45000, nota: 4.5, categoria: 'Eletrônicos', termoBusca: 'usb c cable',
+    descricao: 'Carrega rápido e não enrola, compatível com quase todos os modelos exceto alguns.', specs: { comprimento: '2m', tipo: 'USB-C', blindagem: 'Reforçada' },
+  },
+  {
+    id: 50, titulo: 'Power Bank 20000mah Portátil Carregador Rápido 3 Portas Usb Led Digital Viagem Presente Original Preto',
+    preco: 59.95, precoOriginal: 149.9, desconto: 60, vendidos: 12800, nota: 4.3, categoria: 'Eletrônicos', termoBusca: 'power bank 20000mah',
+    descricao: 'Carrega o celular 5 vezes antes de descarregar, pesa um pouco mas resolve.', specs: { capacidade: '20000mAh', portas: '3 USB', display: 'LED' },
+  },
+  {
+    id: 51, titulo: 'Relógio Inteligente Smartwatch Tela Colorida Monitor Cardíaco Oxigênio Sono Presente Original Fitness 2024',
+    preco: 84.5, precoOriginal: 249.9, desconto: 66, vendidos: 5600, nota: 4.1, categoria: 'Eletrônicos', termoBusca: 'smartwatch fitness',
+    descricao: 'Conta os passos que você não deu e o sono que você não teve.', specs: { tela: 'Colorida 1.8"', sensores: 'Cardíaco, SpO2', bateria: '7 dias' },
+  },
+  {
+    id: 52, titulo: 'Teclado Mecânico Gamer Rgb Switch Azul Anti Ghosting Usb Layout Abnt2 Presente Original Pc',
+    preco: 118.27, precoOriginal: 299.9, desconto: 61, vendidos: 3400, nota: 4.6, categoria: 'Eletrônicos', termoBusca: 'mechanical keyboard rgb',
+    descricao: 'Faz barulho de máquina de escrever, ideal pra irritar quem divide o quarto.', specs: { switch: 'Azul', rgb: 'Sim', conexao: 'USB' },
+  },
+  {
+    id: 53, titulo: 'Mouse Gamer Sem Fio 7200dpi Ergonômico Rgb 6 Botões Recarregável Para Pc Notebook Presente Original',
+    preco: 63.84, precoOriginal: 159.9, desconto: 60, vendidos: 8900, nota: 4.4, categoria: 'Eletrônicos', termoBusca: 'wireless gaming mouse',
+    descricao: 'Precisão de 7200dpi que você nunca vai usar, mas é bom ter.', specs: { dpi: '7200', botoes: '6', rgb: 'Sim' },
+  },
+  {
+    id: 54, titulo: 'Capa Protetora Celular Capinha Antichoque Transparente Antiamarelado Para Todos Modelos Presente Original',
+    preco: 9.47, precoOriginal: 29.9, desconto: 68, vendidos: 87000, nota: 4.0, categoria: 'Eletrônicos', termoBusca: 'clear phone case',
+    descricao: 'Transparente que amarela em 3 meses igual todas as outras.', specs: { material: 'TPU', tipo: 'Antichoque', cor: 'Transparente' },
+  },
+  {
+    id: 55, titulo: 'Cadeira Gamer Ergonômica Reclinável 180 Graus Apoio Pés Almofada Lombar Presente Original Escritório',
+    preco: 799.9, precoOriginal: 1899.9, desconto: 58, vendidos: 1200, nota: 4.6, categoria: 'Eletrônicos', termoBusca: 'gaming chair',
+    descricao: 'Conforto de corrida profissional no seu quarto. Ocupa metade do espaço disponível.', specs: { reclinacao: '180°', apoio: 'Pés e lombar', material: 'Couro PU' },
+  },
+  {
+    id: 56, titulo: 'Cortina Blackout 100% Escuridão Isolamento Térmico Sala Quarto 2 Metros Presente Original Casa Nova',
+    preco: 43.96, precoOriginal: 99.9, desconto: 56, vendidos: 6700, nota: 4.5, categoria: 'Casa', termoBusca: 'blackout curtain',
+    descricao: 'Escurece o quarto mesmo de dia, ótimo pra quem trabalha de noite e dorme de manhã.', specs: { comprimento: '2m', tipo: 'Blackout', isolamento: 'Térmico' },
+  },
+  {
+    id: 57, titulo: 'Almofada Decorativa Capa Veludo Quadrada 45cm Sala Quarto Sofá Presente Original Colorida',
+    preco: 20.17, precoOriginal: 49.9, desconto: 60, vendidos: 3200, nota: 4.3, categoria: 'Casa', termoBusca: 'velvet cushion',
+    descricao: 'Fofa e bonita, a capa sai pra lavar mas dá um trabalho botar de volta.', specs: { tamanho: '45cm', material: 'Veludo', formato: 'Quadrado' },
+  },
+  {
+    id: 58, titulo: 'Fita Led Rgb 5 Metros Bluetooth Controle App Alexa Google Smart Decoração Quarto Presente Original',
+    preco: 32.17, precoOriginal: 79.9, desconto: 60, vendidos: 28000, nota: 4.5, categoria: 'Casa', termoBusca: 'led strip lights rgb',
+    descricao: 'Cola em qualquer superfície por 2 semanas antes de descolar sozinha.', specs: { comprimento: '5m', controle: 'App/Alexa', cores: 'RGB' },
+  },
+  {
+    id: 59, titulo: 'Porta Retrato Digital 10 Polegadas Tela Ips Wi-fi Envia Foto Pelo Celular Presente Original Família',
+    preco: 137.6, precoOriginal: 349.9, desconto: 61, vendidos: 980, nota: 4.2, categoria: 'Casa', termoBusca: 'digital photo frame',
+    descricao: 'Mostra as mesmas 5 fotos em loop infinito até você cansar de ver.', specs: { tela: '10" IPS', conectividade: 'WiFi', armazenamento: '16GB' },
+  },
+  {
+    id: 60, titulo: 'Tapete Para Banheiro Antiderrapante Microfibra Lavável 40x60cm Presente Original Casa Nova',
+    preco: 18.01, precoOriginal: 39.9, desconto: 55, vendidos: 5100, nota: 4.1, categoria: 'Casa', termoBusca: 'bathroom rug',
+    descricao: 'Sai molhado do banho, pisa no tapete, o tapete fica molhado, mas pelo menos é bonito.', specs: { tamanho: '40x60cm', material: 'Microfibra', antiderrapante: 'Sim' },
+  },
+  {
+    id: 61, titulo: 'Garrafa Térmica 1 Litro Aço Inoxidável Café Chá Frio Quente 12h Presente Original Viagem',
+    preco: 38.27, precoOriginal: 89.9, desconto: 57, vendidos: 4200, nota: 4.6, categoria: 'Cozinha', termoBusca: 'thermos flask',
+    descricao: 'Mantém o café quente por horas, mas você esquece que tá quente e queima a língua.', specs: { capacidade: '1 litro', material: 'Aço inoxidável', duracao: '12h' },
+  },
+  {
+    id: 62, titulo: 'Jogo De Panelas Antiaderente 5 Peças Alumínio Forjado Cabo Anti Queima Presente Original Cozinha',
+    preco: 139.95, precoOriginal: 349.9, desconto: 60, vendidos: 7800, nota: 4.4, categoria: 'Cozinha', termoBusca: 'nonstick cookware set',
+    descricao: 'Antiaderente de verdade por 3 meses, depois é só memória afetiva.', specs: { pecas: '5', material: 'Alumínio forjado', antiaderente: 'Sim' },
+  },
+  {
+    id: 63, titulo: 'Liquidificador Portátil Usb Recarregável 400ml Frutas Shakes Vitamina Academia Presente Original',
+    preco: 48.1, precoOriginal: 119.9, desconto: 60, vendidos: 9100, nota: 4.0, categoria: 'Cozinha', termoBusca: 'portable blender',
+    descricao: 'Faz vitamina em qualquer lugar, mas não bate gelo e morre com fruta congelada.', specs: { capacidade: '400ml', alimentacao: 'USB', uso: 'Frutas' },
+  },
+  {
+    id: 64, titulo: 'Porta Temperos Giratório 16 Potes Vidro Aço Inox Bandeja Giratória 360 Graus Presente Original Cozinha',
+    preco: 66.78, precoOriginal: 159.9, desconto: 58, vendidos: 2100, nota: 4.5, categoria: 'Cozinha', termoBusca: 'spice rack rotating',
+    descricao: 'Roda que é uma beleza. Os potes vêm vazios — os temperos você compra separado.', specs: { potes: '16', material: 'Vidro + Aço', rotacao: '360°' },
+  },
+  {
+    id: 65, titulo: 'Batedeira Elétrica Portátil 6 Velocidades Turquesa Bivolt Massa Bolo Pão Presente Original Cozinha',
+    preco: 59.47, precoOriginal: 129.9, desconto: 54, vendidos: 3400, nota: 4.3, categoria: 'Cozinha', termoBusca: 'electric hand mixer',
+    descricao: 'Bate tudo em 30 segundos e suja suas roupas de farinha em 5.', specs: { velocidades: '6', voltagem: 'Bivolt 220V', material: 'ABS + Aço' },
+  },
+  {
+    id: 66, titulo: 'Brinquedo Pelúcia Capivara Gigante 80cm Fofa Anti Alérgica Presente Criança Pet Amigo Original',
+    preco: 77.42, precoOriginal: 159.9, desconto: 52, vendidos: 560, nota: 4.9, categoria: 'Pet', termoBusca: 'capybara plush toy',
+    descricao: 'Maior que seu cachorro pequeno. Ele vai ficar com ciúmes, mas fazer o quê.', specs: { altura: '80cm', material: 'Pelúcia antialérgica', enchimento: 'PP cotton' },
+  },
+  {
+    id: 67, titulo: 'Brinquedo Interativo Para Gato Ratinho Elétrico Controle Remoto Recarregável Presente Original Pet Felino',
+    preco: 36.28, precoOriginal: 79.9, desconto: 55, vendidos: 1800, nota: 4.2, categoria: 'Pet', termoBusca: 'interactive cat toy',
+    descricao: 'Seu gato vai ignorar o brinquedo e brincar com a caixa que ele veio.', specs: { tipo: 'Ratinho elétrico', controle: 'Remoto', uso: 'Gatos' },
+  },
+  {
+    id: 68, titulo: 'Escova Dental Cachorro Gato 360 Graus Dedal Silicone Higiene Bucal Pet Presente Original',
+    preco: 10.57, precoOriginal: 24.9, desconto: 58, vendidos: 4300, nota: 4.1, categoria: 'Pet', termoBusca: 'dog toothbrush finger',
+    descricao: 'Seu pet vai odiar, mas o veterinário vai aplaudir.', specs: { tipo: 'Dedal', material: 'Silicone', rotacao: '360°' },
+  },
+  {
+    id: 69, titulo: 'Penteadeira Espelho Led 12 Lâmpadas Maquiagem Profissional 3 Cores Luz Presente Original Quarto',
+    preco: 115.56, precoOriginal: 299.9, desconto: 61, vendidos: 6400, nota: 4.6, categoria: 'Beleza', termoBusca: 'led makeup mirror',
+    descricao: 'Ilumina cada poro do seu rosto com precisão cirúrgica.', specs: { lâmpadas: '12 LED', cores: '3', ampliacao: '2x e 3x' },
+  },
+  {
+    id: 70, titulo: 'Unhas Postiças Francesinha 500 Unhas Com Cola Profissional Natural Presente Original Salão',
+    preco: 17.28, precoOriginal: 39.9, desconto: 57, vendidos: 32000, nota: 3.9, categoria: 'Beleza', termoBusca: 'fake nails french tip',
+    descricao: 'Duram 3 dias se você não lavar louça, 1 dia se lavar.', specs: { quantidade: '500 unhas', cola: 'Inclusa', estilo: 'Francesinha' },
+  },
+  {
+    id: 71, titulo: 'Perfume Feminino Importado 100ml Floral Amadeirado Longa Duração Presente Original Dia Das Mães',
+    preco: 52.36, precoOriginal: 199.9, desconto: 74, vendidos: 9800, nota: 3.7, categoria: 'Beleza', termoBusca: 'perfume bottle floral',
+    descricao: 'Cheiro bom por 2 horas, depois só se alguém encostar o nariz no seu pescoço.', specs: { volume: '100ml', tipo: 'Floral amadeirado', ocasiao: 'Presente' },
+  },
+  {
+    id: 72, titulo: 'Aparelho Barbear Elétrico 5 Lâminas Recarregável Uso Seco Molhado Presente Original Profissional',
+    preco: 72.35, precoOriginal: 189.9, desconto: 62, vendidos: 2700, nota: 4.3, categoria: 'Beleza', termoBusca: 'electric shaver',
+    descricao: 'Corta rente e não irrita a pele, desde que você passe creme antes e depois.', specs: { laminas: '5', uso: 'Seco e molhado', bateria: 'Recarregável' },
+  },
+  {
+    id: 73, titulo: 'Jogo De Chave Combinada 14 Peças 6mm A 24mm Cromo Vanádio Maleta Organizador Presente Original Mecânico',
+    preco: 63.71, precoOriginal: 179.9, desconto: 65, vendidos: 1100, nota: 4.7, categoria: 'Ferramentas', termoBusca: 'wrench set',
+    descricao: 'Tamanhos que você nunca vai usar mas é bom ter ali na caixa.', specs: { pecas: '14', material: 'Cromo vanádio', maleta: 'Sim' },
+  },
+  {
+    id: 74, titulo: 'Alicate Universal 8 Polegadas Multiuso Corte Descascador Preensão Cabo PVC Presente Original Profissional',
+    preco: 22.47, precoOriginal: 49.9, desconto: 55, vendidos: 3900, nota: 4.5, categoria: 'Ferramentas', termoBusca: 'universal pliers',
+    descricao: 'Serve pra tudo que você imaginar — apertar, cortar, puxar e até abrir tampa de cerveja.', specs: { tamanho: '8"', funcao: 'Multiuso', cabo: 'PVC' },
+  },
+  {
+    id: 75, titulo: 'Caixa Organizadora De Ferramentas 20 Polegadas Bandejas Removíveis Plástico Resistente Presente Original',
+    preco: 45.6, precoOriginal: 99.9, desconto: 54, vendidos: 870, nota: 4.4, categoria: 'Ferramentas', termoBusca: 'tool organizer box',
+    descricao: 'Organiza suas ferramentas que já estavam organizadas no chão da garagem.', specs: { tamanho: '20"', bandejas: 'Removíveis', material: 'Plástico resistente' },
+  },
+  {
+    id: 76, titulo: 'Touca De Cetim Para Dormir Cabelo Cacheado Ondulado Anti Frizz Proteção Noturna Presente Original',
+    preco: 12.84, precoOriginal: 39.9, desconto: 68, vendidos: 15600, nota: 4.2, categoria: 'Moda', termoBusca: 'satin bonnet sleep',
+    descricao: 'Protege o cabelo a noite toda, mas sai da cabeça antes do primeiro sonho.', specs: { material: 'Cetim', uso: 'Noturno', tipo: 'Cabelo cacheado' },
+  },
+  {
+    id: 77, titulo: 'Cinto Masculino Couro Legítimo Fivela Automática 3.5cm Casual Social Trabalho Presente Original',
+    preco: 34.19, precoOriginal: 89.9, desconto: 62, vendidos: 7400, nota: 4.4, categoria: 'Moda', termoBusca: 'leather belt men',
+    descricao: 'Couro legítimo que descasca depois de 6 meses mas até lá você já esqueceu quanto pagou.', specs: { material: 'Couro legítimo', largura: '3.5cm', tipo: 'Automática' },
+  },
+  {
+    id: 78, titulo: 'Meia Invisível Antiderrapante 10 Pares Unissex Algodão Casual Conforto Presente Original Pacote',
+    preco: 17.97, precoOriginal: 39.9, desconto: 55, vendidos: 28000, nota: 3.9, categoria: 'Moda', termoBusca: 'no show socks pack',
+    descricao: '10 pares. Em 3 meses você vai ter 7 meias sem par.', specs: { pares: '10', material: 'Algodão', tipo: 'Invisível' },
+  },
+  {
+    id: 79, titulo: 'Boné Estilo Trucker Snapback Regulável Importado Unissex Casual Esportivo Presente Original',
+    preco: 27.36, precoOriginal: 69.9, desconto: 61, vendidos: 11200, nota: 4.3, categoria: 'Moda', termoBusca: 'trucker hat snapback',
+    descricao: 'Protege do sol e esconde o cabelo sujo com estilo.', specs: { estilo: 'Trucker', regulagem: 'Snapback', material: 'Poliéster' },
+  },
+  {
+    id: 80, titulo: 'Mochila Casual Impermeável 30 Litros Usb Carregador Notebook Escola Viagem Presente Original',
+    preco: 69.67, precoOriginal: 179.9, desconto: 61, vendidos: 5800, nota: 4.4, categoria: 'Moda', termoBusca: 'backpack usb charging',
+    descricao: 'Tão grande que cabe sua vida, mas suas costas vão reclamar depois de 1 hora.', specs: { capacidade: '30L', impermeavel: 'Sim', porta: 'USB carregador' },
+  },
+  {
+    id: 81, titulo: 'Quebra Cabeça 3d Madeira Criança 1000 Peças Montagem Puzzle Presente Original Família Brinquedo',
+    preco: 29.97, precoOriginal: 79.9, desconto: 62, vendidos: 2100, nota: 4.7, categoria: 'Brinquedos', termoBusca: '3d puzzle wood',
+    descricao: 'Monta em 4 horas e desmonta em 4 segundos quando alguém esbarra na mesa.', specs: { pecas: '1000', material: 'Madeira', tipo: '3D' },
+  },
+  {
+    id: 82, titulo: 'Massinha Slime Elástica Brilho 12 Cores Cristal Antiaderente Brinquedo Sensorial Presente Original Criança',
+    preco: 12.95, precoOriginal: 29.9, desconto: 57, vendidos: 43000, nota: 4.0, categoria: 'Brinquedos', termoBusca: 'slime kit colorful',
+    descricao: 'Diverte por 20 minutos e gruda no tapete por 6 meses.', specs: { cores: '12', tipo: 'Slime cristal', textura: 'Elástica' },
+  },
+  {
+    id: 83, titulo: 'Jogo Cartas Uno Original Mattel Família Amigos Diversão Presente Criança Adulto Brinquedo Clássico',
+    preco: 19.97, precoOriginal: 39.9, desconto: 50, vendidos: 67000, nota: 4.9, categoria: 'Brinquedos', termoBusca: 'uno card game',
+    descricao: 'Destrói amizades desde 1971.', specs: { fabricante: 'Mattel', pecas: '112 cartas', idade: '7+' },
+  },
+  {
+    id: 84, titulo: 'Boneca Reborn Realista 50cm Bebê Silicone Corpo Pano Roupas Acessórios Presente Original Criança',
+    preco: 96.01, precoOriginal: 249.9, desconto: 62, vendidos: 340, nota: 4.8, categoria: 'Brinquedos', termoBusca: 'reborn baby doll',
+    descricao: 'Tão realista que dá gatilho em quem tem medo de boneco.', specs: { altura: '50cm', material: 'Silicone + Pano', tipo: 'Reborn' },
+  },
+  {
+    id: 85, titulo: 'Pistola D\'água Elétrica 1200ml 10 Metros Alcance Verão Piscina Presente Original Criança Adulto',
+    preco: 75.33, precoOriginal: 179.9, desconto: 58, vendidos: 2800, nota: 4.5, categoria: 'Brinquedos', termoBusca: 'electric water gun',
+    descricao: 'Mata a sede do seu inimigo a 10 metros de distância.', specs: { capacidade: '1200ml', alcance: '10m', tipo: 'Elétrica' },
+  },
+  {
+    id: 86, titulo: 'Tapete Yoga Premium 6mm Antiderrapante Ecológico Com Alça Alongamento Exercício Presente Original Fitness',
+    preco: 35.93, precoOriginal: 89.9, desconto: 60, vendidos: 6700, nota: 4.3, categoria: 'Fitness', termoBusca: 'yoga mat premium',
+    descricao: 'Superfície antiderrapante que fica escorregadia depois de 3 suores.', specs: { espessura: '6mm', material: 'TPE ecológico', alca: 'Sim' },
+  },
+  {
+    id: 87, titulo: 'Halteres Ajustáveis Par 2x15kg Regulagem Rápida Academia Em Casa Exercício Presente Original Fitness',
+    preco: 269.56, precoOriginal: 699.9, desconto: 61, vendidos: 720, nota: 4.7, categoria: 'Fitness', termoBusca: 'adjustable dumbbells',
+    descricao: 'Pesam 15kg cada mas parecem 50 quando você tá no terceiro exercício.', specs: { peso: '2x15kg', tipo: 'Ajustáveis', uso: 'Academia em casa' },
+  },
+  {
+    id: 88, titulo: 'Luvas Academia Musculação Feminina Masculina Proteção Calos Antiderrapante Presente Original Fitness',
+    preco: 20.13, precoOriginal: 49.9, desconto: 60, vendidos: 11300, nota: 4.2, categoria: 'Fitness', termoBusca: 'gym gloves',
+    descricao: 'Protege suas mãos dos calos que você nunca teve.', specs: { uso: 'Musculação', material: 'Malha + Couro sintético', antiderrapante: 'Sim' },
+  },
+  {
+    id: 89, titulo: 'Tornozeleira Com Peso 2x5kg Par Academia Caminhada Exercício Presente Original Fitness Pernas',
+    preco: 45.06, precoOriginal: 109.9, desconto: 59, vendidos: 2100, nota: 4.1, categoria: 'Fitness', termoBusca: 'ankle weights pair',
+    descricao: 'Transforma sua caminhada no parque em treino militar sem querer.', specs: { peso: '2x5kg', tipo: 'Tornozeleira', uso: 'Caminhada/Exercício' },
+  },
+  {
+    id: 90, titulo: 'Rolo Liberação Miofascial EVA 45cm Alongamento Massagem Exercício Pós Treino Presente Original Fitness',
+    preco: 32.5, precoOriginal: 69.9, desconto: 54, vendidos: 4500, nota: 4.4, categoria: 'Fitness', termoBusca: 'foam roller',
+    descricao: 'Dói gostoso. Você xinga e pede mais.', specs: { comprimento: '45cm', material: 'EVA', uso: 'Liberação miofascial' },
+  },
+  {
+    id: 91, titulo: 'Copo Stanley Original 887ml Aço Inoxidável Isolamento Térmico Gelo 12h Presente Original Cerveja',
+    preco: 99.5, precoOriginal: 249.9, desconto: 60, vendidos: 52000, nota: 4.8, categoria: 'Cozinha', termoBusca: 'stanley cup tumbler',
+    descricao: 'Mantém o gelo intacto por 12h no sol de 40 graus. É bruxaria.', specs: { capacidade: '887ml', material: 'Aço inoxidável', isolamento: '12h' },
+  },
+  {
+    id: 92, titulo: 'Cafeteira Elétrica French Press Aço Inoxidável 800ml Filtro Duplo Presente Original Café Gourmet',
+    preco: 71.83, precoOriginal: 179.9, desconto: 60, vendidos: 3400, nota: 4.5, categoria: 'Cozinha', termoBusca: 'french press coffee maker',
+    descricao: 'Faz o café mais forte que sua personalidade.', specs: { capacidade: '800ml', material: 'Aço inoxidável', filtro: 'Duplo' },
+  },
+  {
+    id: 93, titulo: 'Conjunto Utensílios Bambu 10 Peças Colher Espátula Concha Cozinha Antiaderente Presente Original',
+    preco: 34.9, precoOriginal: 69.9, desconto: 50, vendidos: 8700, nota: 4.6, categoria: 'Cozinha', termoBusca: 'bamboo cooking utensils',
+    descricao: 'Não arranha a panela e ainda é biodegradável. Só não pode molhar demais.', specs: { pecas: '10', material: 'Bambu natural', antiaderente: 'Sim' },
+  },
+  {
+    id: 94, titulo: 'Monitor 24 Polegadas Full Hd Ips 75hz Hdmi Vga Borderless Pc Computador Escritório Gamer',
+    preco: 439.9, precoOriginal: 899.9, desconto: 51, vendidos: 1400, nota: 4.5, categoria: 'Eletrônicos', termoBusca: '24 inch monitor ips',
+    descricao: 'Tela grande o suficiente pra abrir 3 janelas e não ler nenhuma.', specs: { tela: '24" IPS', resolucao: 'Full HD', taxa: '75Hz' },
+  },
+  {
+    id: 95, titulo: 'Máquina De Costura Portátil 12 Pontos Elétrica Bivolt Agulha Kit Iniciante Presente Original Doméstica',
+    preco: 141.25, precoOriginal: 349.9, desconto: 60, vendidos: 1900, nota: 4.1, categoria: 'Casa', termoBusca: 'portable sewing machine',
+    descricao: 'Costura reto se você rezar antes. Para zigue-zague é melhor ir na costureira.', specs: { pontos: '12', voltagem: 'Bivolt', uso: 'Doméstica' },
+  },
+  {
+    id: 96, titulo: 'Purificador De Água Torneira Filtro 3 Camadas Carvão Ativado Fácil Instalação Presente Original',
+    preco: 27.38, precoOriginal: 59.9, desconto: 54, vendidos: 5600, nota: 3.8, categoria: 'Casa', termoBusca: 'faucet water filter',
+    descricao: 'Filtra o gosto e a cor, mas você ainda vai comprar água mineral.', specs: { camadas: '3', filtro: 'Carvão ativado', instalacao: 'Fácil' },
+  },
+  {
+    id: 97, titulo: 'Churrasqueira Elétrica Grill 2000w Antiaderente 12 Porções Churrasco Apartamento Presente Original',
+    preco: 115.4, precoOriginal: 249.9, desconto: 54, vendidos: 1600, nota: 4.3, categoria: 'Cozinha', termoBusca: 'electric indoor grill',
+    descricao: 'Faz churrasco no apartamento sem acionar os bombeiros.', specs: { potencia: '2000W', antiaderente: 'Sim', porcoes: '12' },
+  },
+  {
+    id: 98, titulo: 'Cama Pet Suspensa 60kg Grande Verão Rede Antiderrapante Lavável Presente Original Cachorro Gato',
+    preco: 105.04, precoOriginal: 229.9, desconto: 54, vendidos: 480, nota: 4.6, categoria: 'Pet', termoBusca: 'elevated dog bed',
+    descricao: 'Seu cachorro dorme no trono enquanto você dorme no colchão de solteiro.', specs: { peso_max: '60kg', material: 'Metal + Rede', lavavel: 'Sim' },
+  },
+  {
+    id: 99, titulo: 'Ração Eletrônica Automática Cachorro Gato 4 Litros Timer Programável Gravador Voz Presente Original',
+    preco: 128.41, precoOriginal: 299.9, desconto: 57, vendidos: 760, nota: 4.4, categoria: 'Pet', termoBusca: 'automatic pet feeder',
+    descricao: 'Seu pet come sozinho enquanto você dorme até meio-dia. Culpa zero.', specs: { capacidade: '4L', timer: 'Programável', gravador: 'Sim' },
+  },
+  {
+    id: 100, titulo: 'Máquina Cortar Cabelo Profissional Kit Completo Tesoura Pente Capa Presente Original Barbeiro',
+    preco: 86.27, precoOriginal: 219.9, desconto: 61, vendidos: 3200, nota: 4.5, categoria: 'Beleza', termoBusca: 'hair clipper kit',
+    descricao: 'Corta seu cabelo em casa, o resultado depende da sua coragem.', specs: { laminas: 'Aço inoxidável', kit: 'Completo', voltagem: 'Bivolt' },
+  },
+  {
+    id: 101, titulo: 'Organizador Maquiagem Acrílico Transparente 3 Gavetas Penteadeira Vaidade Presente Original',
+    preco: 55.66, precoOriginal: 139.9, desconto: 60, vendidos: 7800, nota: 4.6, categoria: 'Beleza', termoBusca: 'acrylic makeup organizer',
+    descricao: 'Organiza suas 47 maquiagens que você usa as mesmas 3 todo dia.', specs: { gavetas: '3', material: 'Acrílico', tipo: 'Transparente' },
+  },
+  {
+    id: 102, titulo: 'Balança Corporal Digital Vidro Temperado 150kg Precisão 100g IMC Presente Original Fitness Saúde',
+    preco: 28.81, precoOriginal: 79.9, desconto: 64, vendidos: 9600, nota: 4.3, categoria: 'Fitness', termoBusca: 'digital body scale',
+    descricao: 'Mostra a verdade que você não queria ver. Mas com precisão.', specs: { capacidade: '150kg', precisao: '100g', material: 'Vidro temperado' },
+  },
+  {
+    id: 103, titulo: 'Kit 10 Cabides Veludo Preto Antiderrapante Espaço Fino Casaco Camisa Roupa Presente Original',
+    preco: 21.84, precoOriginal: 49.9, desconto: 56, vendidos: 12500, nota: 4.4, categoria: 'Casa', termoBusca: 'velvet hangers pack',
+    descricao: 'Ocupa menos espaço que cabide normal e não deixa marca na roupa. É o ápice da vida adulta.', specs: { quantidade: '10', material: 'Veludo', cor: 'Preto' },
+  },
+  {
+    id: 104, titulo: 'Mesa Digitalizadora 10 Polegadas 8192 Pressão Caneta Sem Pilha Desenho Presente Original Artista',
+    preco: 192.1, precoOriginal: 449.9, desconto: 57, vendidos: 870, nota: 4.6, categoria: 'Eletrônicos', termoBusca: 'drawing tablet pen',
+    descricao: 'Desenha melhor que papel, mas se você não souber desenhar continua não sabendo.', specs: { tamanho: '10"', pressao: '8192 níveis', caneta: 'Sem pilha' },
+  },
+  {
+    id: 105, titulo: 'Maleta Maquiagem Profissional 3 Andares Fechadura Senha Organizador Portátil Presente Original',
+    preco: 155.88, precoOriginal: 349.9, desconto: 55, vendidos: 1400, nota: 4.7, categoria: 'Beleza', termoBusca: 'professional makeup case',
+    descricao: 'Parece maleta de agente secreto, mas só tem blush e pincel.', specs: { andares: '3', fechadura: 'Senha', tipo: 'Portátil' },
+  },
+  {
+    id: 106, titulo: 'Banco Articulado Supino Reto Inclinado Declinado Academia Em Casa 150kg Presente Original Fitness',
+    preco: 297.35, precoOriginal: 699.9, desconto: 58, vendidos: 540, nota: 4.5, categoria: 'Fitness', termoBusca: 'adjustable weight bench',
+    descricao: 'Suporta 150kg. Você provavelmente não faz supino com 150kg, mas tá lá.', specs: { capacidade: '150kg', posicoes: 'Reto/Inclinado/Declinado', tipo: 'Articulado' },
+  },
+  {
+    id: 107, titulo: 'Piscina Infantil 1500 Litros 3 Anéis Família Cachorro Verão Quintal Presente Original Diversão',
+    preco: 76.27, precoOriginal: 179.9, desconto: 58, vendidos: 8900, nota: 4.1,     categoria: 'Brinquedos', termoBusca: 'swimming pool',
+    descricao: 'Enche em 1 hora com mangueira de baixa pressão. Aproveita.', specs: { capacidade: '1500L', aneis: '3', uso: 'Família/Cachorro' },
+  },
+  {
+    id: 108, titulo: 'Mini Drone 4k Câmera Hd Obstáculo Automático 15 Min Voo Dobrável Presente Original Profissional',
+    preco: 153.16, precoOriginal: 399.9, desconto: 62, vendidos: 650, nota: 3.9,     categoria: 'Eletrônicos', termoBusca: 'quadcopter drone',
+    descricao: 'Voa 15 minutos e carrega por 2 horas. Os 15 minutos são incríveis.', specs: { camera: '4K HD', autonomia: '15min', dobravel: 'Sim' },
+  },
 ]
 
 export const categorias = [
