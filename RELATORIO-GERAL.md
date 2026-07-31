@@ -28,15 +28,19 @@ Projeto final da disciplina de Programação com Agentes. Um *dopamine site*: e-
 
 | Atividade | Status | Detalhes |
 |---|---|---|
-| API `/api/gerar-produtos` (Gemini) | ✅ | Vercel-compatible, Zod validation, rate limit por IP, timeout 20s |
-| API `/api/gerar-reviews` (Gemini) | ✅ | 8 arquétipos de review, cache no cliente por produto |
+| API `/api/gerar-produtos` | ✅ | Vercel-compatible, Zod validation, rate limit por IP, timeout 45s |
+| API `/api/gerar-reviews` | ✅ | 8 arquétipos de review, cache no cliente por produto |
+| Migração Gemini → DeepSeek | ✅ | Provedor único (`deepseek-v4-flash`) pros 3 endpoints, cliente em `src/lib/deepseek.js` |
 | Dev server local | ✅ | `scripts/dev-api-server.js` — substitui `vercel dev` (que exige login) |
 | Scroll infinito na home | ✅ | Buffer de 2 páginas, IntersectionObserver, cache de sessão |
 | Fallback offline (120 produtos, 400 reviews) | ✅ | Dataset estático em `src/data/fallback/`, flag `MODO_OFFLINE` |
 | Catálogo integrado | ✅ | `src/lib/catalogo.js` resolve mock → offline → extras da sessão |
 | Bug: timeout de 10s insuficiente | ✅ Corrigido | Subido para 20s — chamadas legítimas levam 9-10s |
 | Bug: `responseSchema` não força `minItems` | ✅ Corrigido | Adicionado `minItems`/`maxItems` no schema |
-| Cota do Gemini free tier: 20 req/dia | ⚠️ Documentado | Estourada durante testes — fallback serve enquanto isso |
+| Cota do Gemini free tier: 20 req/dia | ✅ Resolvido | Migrado pro DeepSeek (pago por uso, sem teto diário) |
+| Bug: sem schema no provedor, JSON quebrava | ✅ Corrigido | Temperatura 1.1 → 0.85, `z.coerce` nos numéricos, contagem conferida em código |
+| Bug: raciocínio consumia o orçamento de tokens | ✅ Corrigido | `reasoning_effort: 'none'` — antes devolvia `content` vazio e forçava retry (60s, 2x custo) |
+| Bug: reviews nunca tiveram `minItems` | ✅ Corrigido | "Exatamente 8" valia só no texto do prompt; agora `ajustarQuantidade()` confere |
 
 ## Fase 3 — Gamificação (o coração do projeto)
 
@@ -82,7 +86,7 @@ Projeto final da disciplina de Programação com Agentes. Um *dopamine site*: e-
 
 ## Desafios e lições
 
-1. **Cota de API é o gargalo real.** O Gemini free tier tem 20 req/dia — estourou nos próprios testes. O DeepSeek é barato mas também tem limite. O fallback offline (passo 11) foi essencial e deveria ter vindo antes.
+1. **Cota de API é o gargalo real.** O Gemini free tier tem 20 req/dia — estourou nos próprios testes. O fallback offline (passo 11) foi essencial e deveria ter vindo antes. Resolvido na migração pro DeepSeek, pago por uso: o limite virou saldo, não cota diária.
 
 2. **Texto vertical em SVG é traiçoeiro.** A altura do texto é `chars × fontSize`, e o raio da roleta é 100 unidades. Labels de 12 caracteres precisam de raio ~55 para caber, o que os empurra perigosamente perto do centro. A fórmula `radius = 90 - length × 3.5` foi o compromisso.
 
@@ -93,6 +97,10 @@ Projeto final da disciplina de Programação com Agentes. Um *dopamine site*: e-
 5. **Edição de JSX em dev server compartilhado requer atomicidade.** Um `<div>` sem fechar empurrado pelo HMR quebra a tela do usuário ao vivo. Cada edição precisa ser autocontida.
 
 6. **O projeto acumulou 88 módulos e ~500KB de bundle JS.** O gerador de imagens Canvas original inflou o bundle consideravelmente — migrar para arquivos PNG estáticos em `public/` resolveu.
+
+7. **Garantia de formato é do provedor até não ser mais.** O `responseSchema` do Gemini vinha segurando tipo, campo obrigatório e tamanho de array sem que isso estivesse escrito em lugar nenhum do código. O DeepSeek só tem `json_object` (JSON válido, forma livre), e trocar de provedor expôs quanta validação estava terceirizada: contagem de itens, coerção de tipo e checagem de faixa tiveram que virar código explícito. Quando a garantia mora na configuração do provedor, ela é invisível na revisão e some junto com ele.
+
+8. **Parâmetro default do modelo pode ser o custo escondido.** O `deepseek-v4-flash` raciocina por padrão, e os tokens de raciocínio são cobrados como saída. Além do preço, com prompt longo ele às vezes gastava o orçamento inteiro pensando e devolvia resposta vazia — que aparecia como "erro intermitente da API", não como escolha de configuração. `reasoning_effort: 'none'` resolveu latência, custo e confiabilidade de uma vez.
 
 ---
 

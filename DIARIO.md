@@ -139,6 +139,21 @@ Registro solto de erros, decisões e retrabalho conforme acontecem. Vira insumo 
 - Ajuste de escala na Caixa Misteriosa para desktop (ver passo 17).
 - Vendedor: max_tokens aumentado e prompt ajustado para evitar truncamento.
 
+## Migração do Gemini pro DeepSeek (catálogo e reviews)
+
+Motivo: não havia chave do Gemini disponível nesta máquina e o free tier dele já tinha estourado antes (20 req/dia). O vendedor-agente já falava com o DeepSeek, então unificar em um provedor só — uma chave, um modelo (`deepseek-v4-flash`), um cliente (`src/lib/deepseek.js`) — saiu mais simples que manter dois.
+
+- **O DeepSeek não tem `responseSchema`.** `response_format: {type:'json_schema'}` responde "This response_format type is unavailable now"; só existe `json_object`, que garante JSON sintaticamente válido e mais nada. Toda a garantia de forma que o schema do Gemini dava teve que migrar pro código: formato descrito no prompt, Zod validando, e `ajustarQuantidade()` conferindo a contagem. O `minItems`/`maxItems` que resolveu o bug do passo 10 não tem equivalente aqui — a contagem agora é checada em JS e completada do dataset offline quando falta, em vez de queimar um retry pago.
+- **`reasoning_effort: 'none'` é obrigatório.** O `deepseek-v4-flash` raciocina por padrão. Os tokens de raciocínio são cobrados como saída, atrasam tudo e não melhoram em nada um gerador de produto satírico. Pior: com o prompt longo do catálogo o modelo às vezes gastava o orçamento inteiro pensando e devolvia `content` vazio — a primeira tentativa caía, o retry salvava, e a chamada levava 60s por 2x o preço. Atenção: `'minimal'` **ainda raciocina**; só `'none'` (ou `thinking: {type:'disabled'}`) zera o `reasoning_content`.
+- **Temperatura 1.1 corrompia o JSON.** Herdei o valor do vendedor-agente, onde é texto livre e funciona bem. Em saída estruturada sem schema no provedor, a mesma temperatura produzia coisas como `"peso":\"21 sabor"` — aspas escapadas fora de contexto, `JSON.parse` estourando. Baixei pra 0.85 (catálogo) e 0.9 (reviews): 5 rodadas seguidas sem um retry sequer, contra 2 de 3 falhando antes. A variedade do catálogo vem do prompt e do rodízio de categorias, não da temperatura.
+- **Numéricos entram por `z.coerce`.** Sem schema forçando tipo, o modelo manda `"89.90"` como string e valores numéricos onde a spec pedia texto. Rejeitar por isso desperdiçaria uma chamada paga por algo trivialmente convertível — o que vale validar é a regra de negócio (`preco < precoOriginal`), não o tipo do JSON.
+- **Cache de prompt: o título saiu do prompt de sistema.** O DeepSeek cacheia o prefixo comum entre requisições e cobra bem menos pelos tokens que batem no cache. O `promptSistema(titulo, categoria)` das reviews interpolava o título dentro do prompt de sistema, o que mudava o prefixo a cada produto e zerava o cache. Movido pra mensagem do usuário: medido 384 de ~427 tokens de entrada vindo do cache a partir da segunda chamada. Regra pra manter: nada variável no prompt de sistema.
+- **`json_object` exige a palavra "json" nas mensagens.** Sem ela a API responde 400 sem explicar o motivo — descobri tentando. Tem uma checagem em `pedirJson` que estoura com mensagem clara, porque é fácil quebrar isso sem querer editando o texto do prompt.
+- **Timeout com `AbortSignal.timeout` em vez de `Promise.race`.** O `race` só ignora a resposta: a requisição segue correndo e queimando tokens pagos depois de já ter sido dada como perdida. O `AbortSignal` cancela de verdade.
+- Corrigido de quebra um bug que já existia: o schema de reviews nunca teve `minItems`/`maxItems` (o "exatamente 8" valia só como texto do prompt) e o Zod só exigia `.min(1)` — uma resposta com 3 reviews passava calada. Agora `ajustarQuantidade()` confere.
+- Custo medido: página de 8 produtos = ~467 entrada / ~1.285 saída; bloco de 8 reviews = ~427 entrada / ~245 saída. ~20 chamadas custaram US$ 0,01. O `pedirJson` loga entrada/cache/saída de cada chamada — se o número de cache despencar, é sinal de que alguém pôs valor variável no prompt de sistema.
+- `@google/genai` continua no `package.json`. Nenhum código importa mais, mas nada no bundle do cliente depende dele; deixei pra facilitar voltar atrás.
+
 ## Configuração do ambiente
 
 - DeepSeek configurado como provider do opencode (`~/.config/opencode/opencode.jsonc`).

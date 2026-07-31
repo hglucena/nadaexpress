@@ -19,7 +19,7 @@ Um clone de marketplace estilo AliExpress em que **nada é real** — nenhum pro
 - **Estado**: Zustand com middleware `persist` (localStorage)
 - **Fontes**: Anton (display) + Archivo Narrow Variable (corpo)
 - **API/Backend**: Funções serverless compatíveis com Vercel
-- **LLMs**: DeepSeek V4 Flash (vendedor-agente), Gemini (geração de catálogo)
+- **LLMs**: DeepSeek V4 Flash — catálogo, reviews e vendedor-agente
 - **Imagens**: Pollinations.ai (pré-geradas em `public/imagens/`)
 - **Deploy**: Vercel
 
@@ -33,7 +33,7 @@ npm install
 
 # configurar variáveis de ambiente (copie .env.example → .env)
 cp .env.example .env
-# Preencha GEMINI_API_KEY e DEEPSEEK_API_KEY
+# Preencha DEEPSEEK_API_KEY (opcional: sem ela o app roda pelo dataset offline)
 
 # rodar (Vite + API server)
 npm run dev
@@ -60,8 +60,10 @@ O app abre em `http://localhost:5173`. A API local roda em `http://localhost:300
 
 | Variável | Descrição |
 |---|---|
-| `GEMINI_API_KEY` | Chave da API do Google Gemini (catálogo e reviews) |
-| `DEEPSEEK_API_KEY` | Chave da API do DeepSeek (vendedor-agente) |
+| `DEEPSEEK_API_KEY` | Chave da API do DeepSeek — catálogo, reviews e vendedor-agente |
+
+Sem a chave o app funciona inteiro pelo dataset offline (120 produtos, 400 reviews):
+os endpoints respondem 200 com `fonte: "fallback-sem-chave"` em vez de erro.
 
 ---
 
@@ -71,8 +73,8 @@ O app abre em `http://localhost:5173`. A API local roda em `http://localhost:300
 nadaexpress/
 ├── api/                     # Funções serverless (Vercel-compatible)
 │   ├── vendedor.js          # Chat de pechincha (DeepSeek)
-│   ├── gerar-produtos.js    # Catálogo (Gemini)
-│   └── gerar-reviews.js     # Reviews (Gemini)
+│   ├── gerar-produtos.js    # Catálogo (DeepSeek)
+│   └── gerar-reviews.js     # Reviews (DeepSeek)
 ├── scripts/
 │   ├── dev-api-server.js    # Servidor API local (substituto do vercel dev)
 │   └── baixar-imagens.mjs   # Download de imagens do Pollinations
